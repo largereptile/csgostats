@@ -6,6 +6,8 @@
 // @grant    none
 // ==/UserScript==
 
+const displayName = document.getElementById("account_pulldown").innerText;
+
 function hmsToSecondsOnly(str) {
     let p = str.split(':'),
         s = 0, m = 1;
@@ -139,7 +141,7 @@ function addMatch(game) {
         draw:parseInt(ssts[1]) === parseInt(ssts[0]),
         players:bottomTeamPlayers
     };
-    const myTeam = topTeam.players.map(r=>r.name).includes('wndy') ? topTeam : bottomTeam;
+    const myTeam = topTeam.players.map(r=>r.name).includes(displayName) ? topTeam : bottomTeam;
     const enemyTeam = myTeam === topTeam ? bottomTeam : topTeam;
     match.myTeam = myTeam;
     match.enemyTeam = enemyTeam;

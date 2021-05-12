@@ -100,9 +100,9 @@ for map_name, periods in maps_over_time.items():
 
     period_times = [(datetime.datetime(year=k[1], month=k[0], day=1), v) for k, v in periods.items()]
     period_times.sort(key=lambda a: a[0])
-    x = list(map(lambda a: f"{a[0].month}, {a[0].year}", period_times))
-    y = list(map(lambda a: a[1], period_times))
-    plt.plot(x, y, label=map_name)
+    x_axis = list(map(lambda a: f"{a[0].month}, {a[0].year}", period_times))
+    y_axis = list(map(lambda a: a[1], period_times))
+    plt.plot(x_axis, y_axis, label=map_name)
 
 fontP = FontProperties()
 fontP.set_size('small')
@@ -118,7 +118,7 @@ plt.show()
 # Uncomment for winrates per map
 map_winrates = [(name, map_wins[name] / maps[name]) for name in maps.keys()]
 map_winrates.sort(key=lambda k: k[1])
-map_winrates = list(map(lambda k: (k[0], f"{x[1] * 100}%"), map_winrates))
+map_winrates = list(map(lambda k: (k[0], f"{k[1] * 100}%"), map_winrates))
 print(tabulate.tabulate(reversed(map_winrates), headers=["Map Name", "Winrate"]))
 #
 # Uncomment for winrates with players
