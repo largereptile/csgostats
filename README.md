@@ -1,12 +1,31 @@
 # csgostats
 
+## Info
 Script for Grease/Tampermonkey to scrape your match data from the [steam personal game data page](https://steamcommunity.com/my/gcpd/730/?tab=matchhistorycompetitive) because they don't want to just give me a download button.
 
 Scrolls down the page upon loading it, and then exports a .json file upon reaching the bottom containing all the data about the matches.
 
-Click [here](https://raw.githubusercontent.com/largereptile/csgostats/main/csgo.user.js) to automatically install it.
+## Usage
+### Userscript (downloading data as JSON)
+1. Install the Greasemonkey (Firefox)/Tampermonkey (Chrome) extension from the links below:
 
-JSON Format:
+    - [Greasemonkey](https://addons.mozilla.org/en-GB/firefox/addon/greasemonkey/)
+    - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
+
+2. Click [here](https://raw.githubusercontent.com/largereptile/csgostats/main/csgo.user.js) to automatically install the user script once you have those extensions enabled
+
+3. Go to the [CS:GO Match History](https://steamcommunity.com/my/gcpd/730/?tab=matchhistorycompetitive) page and wait
+    - It should automatically scroll down the page and load more matches
+    - If a popup appears saying something along the lines of "Error loading try again later" click "OK" then immediately click "Load More Matches"
+    - Will probably take a few minutes depending on playtime and internet speed
+    - Times out and downloads file if there's no activity for 10 seconds, so click the load more matches button quickly if it does appear
+
+4. Parse the downloaded .json file however you want (optionally using the python scripts from this repository)
+
+### Statistics + Graphs Generator
+- TODO write this section
+
+## JSON Format:
 
 ```json
 [
