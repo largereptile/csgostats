@@ -35,7 +35,7 @@ Scrolls down the page upon loading it, and then exports a .json file upon reachi
 More in-depth instructions in notebook.
 
 You can also run the python scripts to parse the json using
-```python
+```bash
 python facts.py -i out.json -u barold
 ```
 for example. (Flags depend on file used, view top of each file for more info).
