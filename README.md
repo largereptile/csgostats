@@ -23,7 +23,22 @@ Scrolls down the page upon loading it, and then exports a .json file upon reachi
 4. Parse the downloaded .json file however you want (optionally using the python scripts from this repository)
 
 ### Statistics + Graphs Generator
-- TODO write this section
+
+1. Visit this [Google Colab Notebook](https://colab.research.google.com/drive/1GlqJurphKhLZTji8SYdSDLMUt5YoRFlb?usp=sharing)
+
+2. Click the "Copy to Drive" button, save a copy of the notebook in your own Google Drive and open that one.
+
+2. Upload your JSON file downloaded using the earlier script.
+
+3. Fill in parameters and run each block of code to generate graphs.
+
+More in-depth instructions in notebook.
+
+You can also run the python scripts to parse the json using
+```python
+python facts.py -i out.json -u barold
+```
+for example. (Flags depend on file used, view top of each file for more info).
 
 ## JSON Format:
 
