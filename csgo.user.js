@@ -2,7 +2,7 @@
 // @name     csgostats to json
 // @namespace https://steamcommunity.com
 // @include https://steamcommunity.com/id/*/gcpd/730?tab=matchhistorycompetitive
-// @version  1
+// @version  1.1
 // @grant    none
 // ==/UserScript==
 
@@ -24,13 +24,16 @@ function sleep(ms) {
 }
 
 async function getHistory(lastGame, bigLastGame) {
+  window.scrollTo(0,document.body.scrollHeight);
     const btn = document.getElementsByClassName("load_more_history_area");
     const g = [...document.querySelector('.generic_kv_table.csgo_scoreboard_root').children[0].children];
     const newGame = g[g.length - 1].querySelector(".csgo_scoreboard_inner_left").querySelectorAll("tr>td")[1].innerHTML;
     let btn2 = document.getElementById("load_more_button");
+  	let btn3 = document.getElementById("load_more_clickable");
     if(btn.length !== 0 && (lastGame !== newGame && bigLastGame.length !== g.length) && (btn2.style.display !== "none")) {
         const len = g.length;
-        btn[0].firstElementChild.click();
+        // btn[1].firstElementChild.click();
+      	btn3.click();
         const popup = document.getElementsByClassName("newmodal");
         if(popup.length !== 0) {
             popup[0].remove();
